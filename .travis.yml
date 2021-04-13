@@ -17,11 +17,14 @@ deploy:
   provider: elasticbeanstalk
   region: "eu-central-1"
   app: "docker-react"
-  env: "Dockerreact-env"
-  bucket: "elasticbeanstalk-eu-central-1-966278727093"
+  env: "Dockerreact-env-1"
+  bucket_name: "elasticbeanstalk-eu-central-1-966278727093"
   bucket_path: "docker-react"
   on:
     branch: master
-  access_key_id: $AWS_ACCESS_KEY_ID
-  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  access_key_id: "$AWS_ACCESS_KEY_ID"
+  secret_access_key: "$AWS_SECRET_ACCESS_KEY"
   skip_cleanup: true 
+
+after_deploy:
+  - echo "successfully deployed"
