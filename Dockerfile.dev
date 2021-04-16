@@ -1,17 +1,5 @@
-# Works well with docker and docker-compose CLI
-# docker run -p 3000:3000 -v /home/node/app/node_modules -v $(pwd):/home/node/app
-# or
-# docker-compose up --build
-# https://www.digitalocean.com/community/tutorials/how-to-build-a-node-js-application-with-docker
 FROM node:alpine
 
-# USER node
-# RUN mkdir -p /home/node/app
-# WORKDIR /home/node/app
-# or
-# RUN mkdir -p /home/node/app && chown -R node:node /home/node/app
-# WORKDIR /home/node/app
-# or
 WORKDIR /app
 RUN chown -R node:node /app
 

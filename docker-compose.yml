@@ -10,8 +10,6 @@ services:
       - /app/node_modules
       - .:/app
   tests:
-    # environment:
-    #   - CI=true
     build: 
       context: .
       dockerfile: Dockerfile.dev
